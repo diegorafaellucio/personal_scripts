@@ -1,0 +1,70 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\title{Manual Simples: Como Usar o Script de Predição OBB}
+\author{}
+\date{\today}
+\begin{document}
+\maketitle
+
+\section*{O que este programa faz?}
+Este programa permite que você use um modelo de Inteligência Artificial para analisar um vídeo e marcar automaticamente objetos detectados em cada quadro (imagem) do vídeo. O resultado são imagens com "caixinhas coloridas" desenhadas sobre os objetos identificados.
+
+\section*{O que você precisa?}
+\begin{itemize}
+    \item Um vídeo em formato comum (ex: MP4).
+    \item Um arquivo de modelo de IA (fornecido pela equipe, termina com .pt).
+    \item Um computador com Windows ou Linux.
+    \item \textbf{Apenas conhecimentos básicos de computador!}
+\end{itemize}
+
+\section*{Passo 1: Preparando o Computador}
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Abra o terminal (Linux) ou o Prompt de Comando (Windows).}
+    \item Navegue até a pasta do programa:
+    \begin{verbatim}
+cd /home/diego/Projects/PERSONAL/scripts/modules/predict_data_model
+\end{verbatim}
+    (No Windows, adapte o caminho conforme sua pasta)
+    \item Crie um ambiente virtual (opcional, mas recomendado):
+    \begin{verbatim}
+python -m venv venv
+\end{verbatim}
+    \item Ative o ambiente virtual:
+    \begin{itemize}
+        \item Linux:
+        \begin{verbatim}
+source venv/bin/activate
+\end{verbatim}
+        \item Windows:
+        \begin{verbatim}
+venv\Scripts\activate
+\end{verbatim}
+    \end{itemize}
+    \item Instale os programas necessários:
+    \begin{verbatim}
+pip install -r requirements.txt
+\end{verbatim}
+\end{enumerate}
+
+\section*{Passo 2: Rodando o Programa}
+\begin{enumerate}[label=\arabic*.]
+    \item Coloque o arquivo do vídeo e o arquivo do modelo na mesma pasta (ou saiba o caminho deles).
+    \item No terminal, execute o comando abaixo, trocando os caminhos conforme seus arquivos:
+    \begin{verbatim}
+python predict_data_model.py --video SEU_VIDEO.mp4 --model SEU_MODELO.pt --output pasta_resultado
+\end{verbatim}
+    \item Após rodar, as imagens com marcações serão salvas na pasta que você escolheu em --output.
+\end{enumerate}
+
+\section*{Dicas e Problemas Comuns}
+\begin{itemize}
+    \item Se nada for detectado nas imagens, confirme se o modelo e o vídeo são compatíveis.
+    \item Se não souber como "navegar até a pasta" ou "ativar o ambiente virtual", peça ajuda!
+\end{itemize}
+
+
+\end{document}
