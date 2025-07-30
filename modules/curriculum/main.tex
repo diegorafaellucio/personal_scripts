@@ -1,0 +1,395 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+\documentclass[12pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{black}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+\usepackage[english]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+% \usepackage{import}
+
+% personal data
+\name{Diego Rafael}{Lucio}
+%\title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Maringá - Paraná - Brazil}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+\phone[mobile]{+55(44)99950-0352 }                   % optional, remove / comment the line if not wanted
+%\phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+\email{diegorafaellucio@gmail.com}                               % optional, remove / comment the line if not wanted
+\homepage{www.linkedin.com/in/diegolucio/}
+
+% optional,
+
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{}{%
+    {\bfseries#3}\\%
+    \ifthenelse{\equal{#4}{}}{}{{#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, {#5}}\\%
+    \ifthenelse{\equal{#2}{}}{}{{#2}\vspace{2pt}}%
+    \strut%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi\vspace{6pt}}
+    % \ifthenelse{\equal{#6}{}}{}{{\bfseries Techs: \normalfont#6}\vspace{12pt}}%
+    }
+
+\patchcmd{\makeheaddetailssymbol} % <===================================
+  {\textbullet}% to search
+  {}%            replacement
+  {}{}%
+
+\begin{document}
+
+\makecvtitle
+
+\vspace{12pt}
+\section{PROFESSIONAL SUMMARY}
+
+\small{Ph.D. in Computer Science from the Federal University of Paraná, with over 10 years of experience combining full-stack development and advanced research in Artificial Intelligence. Senior full-stack developer with solid experience in modern backend technologies (Python with Django/FastAPI and Java with Spring Boot) and frontend (React.js and Next.js). Expert in Machine Learning and Computer Vision, with a proven track record in developing innovative solutions in biometrics and facial recognition. I combine technical expertise in software development with deep knowledge of AI algorithms, enabling the creation of robust and scalable applications that integrate cutting-edge technologies in production environments.}
+
+\vspace{12pt}
+\section{Skills}
+
+\begin{itemize}
+
+\item \textbf{Backend Development:}
+  \begin{itemize}
+    \item \textbf{APIs e Microservices:} FastAPI, Django REST Framework, Spring Boot, Flask
+    \item \textbf{Databases:} MySQL, PostgreSQL, SQLServer, MongoDB, Redis, Neo4j
+    \item \textbf{Caching \& Performance:} Redis (caching, session management, pub/sub), Memcached
+    \item \textbf{Graph Databases:} Neo4j (graph modeling, Cypher queries, relationship analysis)
+    \item \textbf{Message Queues:} Apache Kafka, RabbitMQ, Redis Streams
+  \end{itemize}
+\vspace{2pt}
+
+\item \textbf{Python and Ecosystem:}
+  \begin{itemize}
+    \item \textbf{Machine Learning:} PyTorch, TensorFlow, Scikit-learn, Keras, PyCaret
+    \item \textbf{APIs e Web:} FastAPI, Django, Sanic, Flask
+    \item \textbf{Data Analysis:} Pandas, NumPy, Matplotlib, Seaborn
+    \item \textbf{Image Processing:} OpenCV, PIL, scikit-image, imutils
+  \end{itemize}
+\vspace{2pt}
+
+\item \textbf{Other Languages:} Java (Spring, JSF, Hibernate), JavaScript/TypeScript, PHP, MATLAB, C++, C
+\vspace{2pt}
+\item \textbf{Web Development:} React, Angular, Spring Boot
+\vspace{2pt}
+\item \textbf{DevOps:} Docker, Kubernetes, Jenkins, CI/CD, AWS, Linux
+\vspace{2pt}
+\item \textbf{Methodologies:} Agile (Scrum, Kanban, TDD), DevOps, Continuous Integration
+\vspace{2pt}
+\item \textbf{Other Tools:} Git, Jira, Confluence, Microsoft Azure
+
+\end{itemize}
+
+% \section{Certifications}
+
+% \begin{itemize}
+
+% \item \textbf{Nanodegree de Deep Learning} - Udacity
+% \vspace{2pt}
+
+% \item \textbf{Machine Learning e Data Science com Python} - Framework
+% \vspace{2pt}
+
+% \item \textbf{Git e GitHub: Formação Básica}
+% \vspace{2pt}
+
+% \end{itemize}
+
+\vspace{12pt}
+\section{Professional Experience}
+
+\vspace{3pt}
+
+\vspace{24pt}
+\small{\textbf{Tokenology - Miami, USA}}
+\vspace{3pt}
+
+\textbf{Senior Machine Learning Engineer / Back-End Developer} \hfill \textit{January 2024 -- Present}
+\begin{itemize}
+    \item Leading the development of advanced facial recognition and liveness detection systems using state-of-the-art architectures such as Vision Transformers and attention models.
+    \item Implementing innovative fraud detection techniques in liveness detection, including deepfake detection and presentation attacks.
+    \item Developing robust facial biometric verification pipelines with high accuracy and low latency using PyTorch and ONNX Runtime.
+    \item Coordinating the integration of biometric systems with Spring Boot microservices, ensuring scalability and security.
+    \item Deployed distributed caching and session management solutions, reducing API response times by 40\% and improving system scalability for concurrent users.
+    \item \textbf{Key technologies:} Python (PyTorch, ONNX, FastAPI), Java (Spring Boot), Docker, AWS, Redis
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Machine Learning Consultant} \hfill \textit{January 2023 -- December 2023}
+\begin{itemize}
+    \item Developed facial recognition models using modern architectures like ArcFace and CosFace, achieving high accuracy in challenging scenarios.
+    \item Implemented liveness detection system using advanced deep learning techniques for motion and facial expression detection.
+    \item Created scalable FastAPI APIs for asynchronous biometric verification processing.
+    \item Optimized models for real-time inference using ONNX Runtime and TensorRT.
+    \item Implemented pub/sub messaging system for real-time notifications and caching layer for frequently accessed model predictions, improving system performance by 35\%.
+    \item \textbf{Key technologies:} Python (PyTorch, TensorRT, FastAPI), Java (Spring Boot), Docker, AWS
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Ecotrace - Vinhedo, Brazil}}
+\vspace{3pt}
+
+\textbf{Senior Artificial Intelligence Consultant} \hfill \textit{January 2024 -- Present}
+\begin{itemize}
+    \item Leading expansion and optimization projects of the computer vision system for new industrial units.
+    \item Acting as technical mentor for the ML/CV team, sharing knowledge and best practices.
+    \item Developing new features and optimizations for the carcass classification system.
+    \item Designed graph database solutions to model complex relationships between product traceability data, enabling advanced analytics and improving supply chain transparency by tracking product lineage across multiple processing stages.
+    \item \textbf{Key technologies:} Python (PyTorch, OpenCV, Django), Docker, Kubernetes, AWS, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Senior Artificial Intelligence Engineer} \hfill \textit{November 2023 -- December 2023}
+\begin{itemize}
+    \item Led the expansion of the computer vision system to multiple industrial units.
+    \item Implemented improvements in the inference pipeline, reducing processing time by 35\%.
+    \item Developed new modules for product quality analysis and traceability.
+    \item Coordinated the ML/CV team, establishing development processes and methodologies.
+    \item Architected hybrid data solutions using distributed caching for real-time classification results and graph databases for modeling complex product relationships and supply chain networks, resulting in 50\% faster query responses for traceability reports.
+    \item \textbf{Key technologies:} Python (PyTorch, OpenCV, Django), Docker, Kubernetes, AWS, CUDA, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Computer Vision Consultant} \hfill \textit{November 2022 -- October 2023}
+\begin{itemize}
+    \item Developed a computer vision system using PyTorch and OpenCV for automatic bovine carcass classification, increasing processing efficiency by 25\%.
+    \item Implemented advanced image processing techniques with scikit-image and PIL for segmentation and quality analysis.
+    \item Developed a REST API with Django for integrating the computer vision system with the existing ERP system.
+    \item Optimized the inference pipeline for real-time processing using CUDA and TensorRT.
+    \item Deployed caching layer for frequently accessed classification models and results, reducing database load by 60\% and improving API response times for real-time processing requirements.
+    \item \textbf{Key technologies:} Python (PyTorch, OpenCV, Django, scikit-image, PIL), Docker, Kubernetes, AWS, CUDA, TensorRT, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Hypeone - Curitiba, Brazil}}
+\vspace{3pt}
+
+\textbf{Machine Learning Consultant} \hfill \textit{January 2023 -- October 2023}
+\begin{itemize}
+    \item Acted as technical consultant for ML and development teams, providing mentorship in complex projects.
+    \item Optimized microservices architecture with Spring Boot and Spring Cloud, improving system scalability.
+    \item Implemented improvements in financial transaction processing services using Java and Spring Framework.
+    \item Developed new features for the web system using Angular and TypeScript.
+    \item Designed comprehensive backend solutions using high-performance caching for financial transactions and graph databases for modeling complex customer relationship networks and fraud detection patterns, resulting in 45\% improvement in transaction processing speed.
+    \item \textbf{Key technologies:} Java (Spring Boot, Spring Cloud), Python (scikit-learn, FastAPI), Angular, Kafka, AWS, Redis, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Senior Software Engineer} \hfill \textit{May 2021 -- December 2022}
+\begin{itemize}
+    \item Developed a complete financial system using Java with Spring Boot, including transaction processing and risk analysis modules.
+    \item Implemented a scalable microservices architecture using Spring Cloud, Service Discovery and API Gateway.
+    \item Created ML models using scikit-learn and PyCaret for financial process automation.
+    \item Developed modern and responsive web interfaces using Angular and TypeScript.
+    \item Integrated systems using Apache Kafka for asynchronous and real-time processing.
+    \item Architected distributed caching and session management solutions, enabling horizontal scaling and reducing database queries by 70\% during peak transaction periods.
+    \item \textbf{Key technologies:} Java (Spring Boot, Spring Cloud), Python (scikit-learn, FastAPI), Angular, Kafka, Docker, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Federal University of Paraná (VRI) - Curitiba, Brazil}}
+\vspace{3pt}
+
+\textbf{PhD Researcher} \hfill \textit{October 2016 -- May 2022}
+\begin{itemize}
+    \item Developed deep learning models with PyTorch and TensorFlow for biometric recognition, focusing on periocular recognition.
+    \item Implemented advanced image processing and computer vision techniques.
+    \item Published articles in high-impact international journals and conferences.
+    \item Collaborated on international biometric research projects.
+    \item \textbf{Key technologies:} Python (PyTorch, TensorFlow, OpenCV), Docker, CUDA
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Unicesumar - Maringá, Brazil}}
+\vspace{3pt}
+
+\textbf{Senior Software Engineer} \hfill \textit{October 2016 -- December 2020}
+\begin{itemize}
+    \item Developed a facial recognition system with PyTorch and OpenCV for online exam monitoring, significantly reducing academic fraud.
+    \item Implemented predictive models using scikit-learn and Pandas to identify students at risk of dropping out, reducing rates by 87\%.
+    \item Created interactive dashboards with Plotly and Streamlit for academic metrics visualization.
+    \item Developed a REST API with Django for integrating the facial recognition system with the LMS.
+    \item Designed graph database solutions to model complex student behavioral patterns and academic relationships, enabling predictive analytics that improved early intervention strategies and contributed to the 87\% dropout reduction.
+    \item Deployed caching solutions for student session data, reducing database load and improving system responsiveness.
+    \item \textbf{Key technologies:} Python (PyTorch, scikit-learn, Django, OpenCV, Pandas, Plotly, Streamlit), Docker, AWS, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Wasys - Curitiba, Brazil}}
+\vspace{3pt}
+
+\textbf{Senior Data Scientist} \hfill \textit{October 2018 -- May 2021}
+\begin{itemize}
+    \item Developed complete ERP system modules using Java with JSF and Spring Boot, including financial management and inventory control.
+    \item Implemented microservices architecture with Spring Boot, ensuring scalability and efficient maintenance.
+    \item Developed an OCR system using TensorFlow and OpenCV for automatic extraction of data from financial documents, improving accuracy by 18\%.
+    \item Created responsive and intuitive web interfaces using JSF, PrimeFaces and Bootstrap.
+    \item Implemented integrations with external systems using REST APIs and messaging with Apache Kafka.
+    \item Designed graph database solutions to model complex business relationships in ERP system, enabling advanced analytics on customer-supplier networks and inventory dependencies, improving decision-making processes by 30\%.
+    \item Deployed distributed caching solutions for frequently accessed ERP data and session management, reducing database load and improving system responsiveness for concurrent users by 55\%.
+    \item \textbf{Key technologies:} Java (Spring Boot, JSF, Hibernate), Python (TensorFlow, OpenCV), Docker, Kubernetes, Apache Kafka, Neo4j, Redis
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{State University of Maringá - Maringá, Brazil}}
+\vspace{3pt}
+
+\textbf{Master's Researcher} \hfill \textit{February 2014 -- August 2016}
+\begin{itemize}
+    \item Developed a computer vision application for automatic bird species classification based on their vocalizations.
+    \item Implemented signal processing techniques for converting audio to spectrograms using specialized libraries.
+    \item Applied advanced texture descriptors for feature extraction from spectrograms.
+    \item Developed and optimized classification models using SVM (Support Vector Machines).
+    \item \textbf{Key technologies:} Python, MATLAB, OpenCV, scikit-learn, librosa
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Seebot - Maringá, Paraná, Brazil}}
+\vspace{3pt}
+
+\textbf{Senior Biometrics Researcher/Full Stack Developer} \hfill \textit{January 2014 -- December 2016}
+\begin{itemize}
+    \item Developed computer vision algorithms with Python and OpenCV for biometric systems.
+    \item Implemented embedded systems using Python on Raspberry Pi for real-time image capture and processing.
+    \item Created web interfaces with PHP and Java for biometric data visualization and management.
+    \item Integrated hardware systems (Arduino) with software for biometric capture automation.
+    \item \textbf{Key technologies:} Python (OpenCV, scikit-learn), Java, PHP, Arduino, Raspberry Pi
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Elotech Informática e Sistemas Ltda - Maringá, Paraná, Brazil}}
+\vspace{3pt}
+
+\textbf{Junior Developer} \hfill \textit{August 2013 -- February 2014}
+\begin{itemize}
+    \item Developed solutions in Adobe Flex and Java for the transparency portal.
+    \item Collaborated with team members to ensure seamless integration of new features and functionalities.
+    \item Implemented efficient coding practices to optimize performance and user experience.
+    \item \textbf{Key technologies:} Adobe Flex, Java, JSP, JSF, JSTL, MySQL
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Visãonet Telecom - Goioerê, Paraná, Brazil}}
+\vspace{3pt}
+
+\textbf{Junior Developer} \hfill \textit{March 2012 -- December 2013}
+\begin{itemize}
+    \item Developed new functionalities for internal web systems in JAVA and PHP.
+    \item Maintained e-commerce sites on the MAGENTO framework.
+    \item Collaborated with team to ensure smooth operations and updates.
+    \item Contributed to the overall success of web development projects.
+    \item \textbf{Key technologies:} Java, PHP, MAGENTO, MySQL
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Systems Support Analyst} \hfill \textit{April 2011 -- March 2012}
+\begin{itemize}
+    \item Spearheaded the implementation of commercial automation systems, streamlining operations and enhancing productivity.
+    \item Developed new software features in response to client requests.
+    \item Collaborated with teams to ensure seamless integration of new features.
+    \item Contributed to the overall efficiency and functionality of the software.
+    \item \textbf{Key technologies:} Delphi, Firebird, Java, PHP, MySQL
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Call Center Operator} \hfill \textit{July 2008 -- April 2010}
+\begin{itemize}
+    \item Provided customer support via telephone to resolve internet access issues.
+    \item Developed new technologies and fixed bugs in company products to enhance customer experience.
+    \item Collaborated with team members to improve customer service processes and efficiency.
+    \item Implemented innovative solutions to streamline customer support operations.
+    \item \textbf{Key technologies:} PHP, MySQL, Elastix
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Papelaria Famsit - Goioerê, Paraná, Brazil}}
+\vspace{3pt}
+
+\textbf{General Assistant} \hfill \textit{January 2006 -- June 2008}
+\begin{itemize}
+    \item Managed cleaning tasks, photocopying, and customer service.
+    \item Ensured a clean and organized workspace and provided efficient services.
+    \item Implemented new protocols to improve efficiency and customer satisfaction.
+    \item Developed strong multitasking and customer service skills in a fast-paced environment.
+\end{itemize}
+
+\vspace{12pt}
+\section{Education}
+
+\cventry{2016--2022}{Ph.D. in Computer Science}{Federal University of Paraná}{Curitiba, Paraná, Brazil}{}{}
+
+\cventry{2014--2016}{Master's in Computer Science}{State University of Maringá}{Maringá, Paraná, Brazil}{}{}
+
+\cventry{2008--2011}{Bachelor's in Internet Systems Technology}{Federal University of Technology - Paraná}{Campo Mourão, Paraná, Brazil}{}{}
+
+\vspace{12pt}
+\section{Awards and Recognition}
+
+\begin{itemize}
+
+\item{\cventry{}{First place in the Biometrics Competition (Periocular Region)}{IEEE WORLD CONGRESS ON COMPUTATIONAL INTELLIGENCE}{Glasgow, Reino Unido, 2020}{}{}}
+
+\item{\cventry{}{Second place in the Sclera Segmentation Competition}{IEEE INTERNATIONAL JOINT CONFERENCE ON BIOMETRICS}{Houston, EUA, 2020}{}{}}
+
+\end{itemize}
+
+\vspace{12pt}
+\section{Selected Publications}
+
+\begin{itemize}
+
+\item Pati, S.; Baid, U.; Edwards, B. et al.(2022). Federated learning enables big data for rare cancer boundary detection. Nature communications, 13(1), 7346. \textbf{[305 citations]}
+
+\item LUCIO, D. R. et al. (2020). COVID-19 detection in CT images with deep learning: A voting-based scheme and cross-datasets analysis. Informatics in Medicine Unlocked, 20, 100427. \textbf{[260 citations]}
+
+\item LUCIO, D. R.; COSTA, Y. M. G. (2016). Combining visual and acoustic features for audio classification tasks. Pattern Recognition Letters, 88, 49-56. \textbf{[99 citations]}
+
+\item ZANLORENSI, L. A.; LAROCA, R.; LUCIO, D. R.; SANTOS, L. R., BRITTO JR; A. S.; MENOTTI, D. (2022). A new periocular dataset collected by mobile devices in unconstrained scenarios. Scientific Reports, 12(1), 17989. \textbf{[26 citations]}
+
+\item VITEK, MATEJ; DAS, ABHIJIT; LUCIO, DIEGO RAFAEL et al. (2022). Exploring Bias in Sclera Segmentation Models: A Group Evaluation Approach. IEEE Transactions on Information Forensics and Security, 18, 190-205. \textbf{[19 citations]}
+
+\item LUCIO, D. R.; LAROCA, R.; SEVERO, E.; BRITTO JR., A. S.; MENOTTI, D. (2018). Fully Convolutional Networks and Generative Adversarial Networks Applied to Sclera Segmentation. In Proceedings of the International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications. \textbf{[50 citations]}
+
+\item LUCIO, D. R. et al. (2020). SSBC 2020: Sclera Segmentation Benchmarking Competition in the Mobile Environment. In 2020 IEEE International Joint Conference on Biometrics (IJCB). \textbf{[43 citations]}
+
+\item LUCIO, D. R.; COSTA, Y. M. G. (2016). Combining visual and acoustic features for bird species classification. In Proceedings of the 25th Conference on Graphics, Patterns and Images. \textbf{[37 citations]}
+
+\end{itemize}
+
+\vspace{8pt}
+Full list available on \href{https://scholar.google.com.br/citations?user=FS_momQAAAAJ&hl=en}{Google Scholar} .
+
+\vspace{12pt}
+\section{Work Presentations}
+
+\begin{enumerate}
+    \item LUCIO D. R. ; ZANLORENSI L.; BESSON V., COSTA Y. M. G., MENOTTI D. . Pupil Constrictions and Dilations Effects as Data Augmentation on an Iris Recognition CNN Approach. In: 23rd International Conference on Artificial Intelligence and Soft Computing, 2024.
+
+    \item KIMURA G.Y. ; LUCIO D. R. ; BRITO A. S. ; MENOTTI D. . Simultaneous Iris and Periocular Region Detection Using Coarse Annotations. In: International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications, 2020.
+
+    \item LUCIO, D. R. ; LAROCA, R. ; SEVERO, E. ; BRITTO JR., A. S. ; MENOTTI, D. . Fully Convolutional Networks and Generative Adversarial Networks Applied to Sclera Segmentation. 2018.
+
+\end{enumerate}
+
+\end{document}
+
+%% end of file `template.tex'.

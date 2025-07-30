@@ -149,7 +149,7 @@ def generateDatabaseFromMultiplePaths(dataset_paths, data_output_path):
 
 # Example of using the new function with an array of dataset paths
 
-generateDatabaseFromMultiplePaths(['/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/6.0'], "/home/diego/2TB/TREINOS/BETTER_BEEF_6.0/DATA")
+# generateDatabaseFromMultiplePaths(['/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/6.0'], "/home/diego/2TB/TREINOS/BETTER_BEEF_6.0/DATA")
 
 # Other examples commented out
 # generateDatabase('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/5-BRUISE/TRAIN/ECOTRACE/MINERVA/RLM/1.0', "/home/diego/2TB/TREINOS")
@@ -164,4 +164,9 @@ generateDatabaseFromMultiplePaths(['/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF
 # generateDatabase('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/5-BRUISE/TRAIN/ECOTRACE/SULBEEF/SB/1.0', "/home/diego/2TB/TREINOS")
 
 
+# generateDatabase('/home/diego/2TB/datasets/COGTIVE/MAURICEA_MONITORAMENTO/2.0', "/home/diego/2TB/datasets/COGTIVE/MAURICEA_MONITORAMENTO/2.0/DATA")
 # generateDatabase('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/4.0', "/home/diego/2TB/TREINOS/BETTER_BEEF_4.0")
+
+# generateDatabase('/home/diego/2TB/datasets/COGTIVE/Pancristal/1.0', "/home/diego/2TB/datasets/COGTIVE/Pancristal/1.0/DATA")
+generateDatabase('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/7.0', "/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/7.0/DATA")
+

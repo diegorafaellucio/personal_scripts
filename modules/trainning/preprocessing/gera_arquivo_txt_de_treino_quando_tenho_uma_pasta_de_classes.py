@@ -64,7 +64,7 @@ def convert_annotation(input_file, output_file, classes):
 
         for obj in root.iter('object'):
             difficult = obj.find('difficult').text
-            
+
             # Try to find the class name using both 'name' and 'n' tags
             name_tag = obj.find('name')
             if name_tag is None:
@@ -72,7 +72,7 @@ def convert_annotation(input_file, output_file, classes):
                 if name_tag is None:
                     # Silently skip objects without name tags
                     continue
-                    
+
             cls = name_tag.text
             cls = cls.upper().replace(" ", "_")
 
@@ -80,7 +80,7 @@ def convert_annotation(input_file, output_file, classes):
             if cls not in classes:
                 # Silently skip classes not in our dictionary
                 continue
-                
+
             cls_id = classes[cls]
             xmlbox = obj.find('bndbox')
             b = (float(xmlbox.find('xmin').text), float(xmlbox.find('xmax').text), float(xmlbox.find('ymin').text),
@@ -111,7 +111,6 @@ def generate_labels(dataset_path, classes, image_path='IMAGES'):
 
 
 if __name__ == '__main__':
-
     # generate_labels('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/5-BRUISE/TRAIN/ECOTRACE/MINERVA/RLM/1.0',
     #                 classes={"FALHA": 0, "LEVE": 1, "MODERADA": 2, "GRAVE": 3, "GRAVE_ABCESSO": 4, 'GRAVE_ABSCESSO': 4})
     #
@@ -175,15 +174,15 @@ if __name__ == '__main__':
     # generate_labels('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/5-BRUISE/TRAIN/ECOTRACE/SULBEEF/SB/1.0',
     #                 classes={"FALHA": 0, "LEVE": 1, "MODERADA": 2, "GRAVE": 3, "GRAVE_ABCESSO": 4, 'GRAVE_ABSCESSO': 4})
 
-    generate_labels('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/6.0',
-                    classes={"MEAT": 0, "PERSON": 1, "SCRAP": 2, "HELMET": 3, "TRASH": 4, 'FULL_TRAY': 5, 'EMPTY_TRAY': 6})
+    # generate_labels('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/6.0',
+    #                 classes={"MEAT": 0, "PERSON": 1, "SCRAP": 2, "HELMET": 3, "TRASH": 4, 'FULL_TRAY': 5, 'EMPTY_TRAY': 6})
     #
     # generate_labels('/home/diego/2TB/datasets/COGTIVE/MAURICEA_MONITORAMENTO/1.0',
     #                 classes={"FILE_DE_FRANGO": 0, "PERSON": 1, "SASSAMI": 2, "BANDEIJA": 3, "FACA": 4, 'RETALHOS_SACO': 5,
     #                          'SACO_OSSO': 6})
     #
     # generate_labels('/home/diego/2TB/datasets/COGTIVE/BIG_CHARQUE/1.0',
-    #                 classes={"PERSON": 0, "CHARQUE_1KG": 1, "CHARQUE_500G": 2, "RETALHOS": 3, "CHARQUES_PULMAO": 4})
+    #                 classes={"PERSON": 0, "CHARQUE_1KG": 1, "CHARQUE_500G": 1, "RETALHOS": 2, "CHARQUES_PULMAO": 1})
     #
     # generate_labels('/home/diego/2TB/datasets/COGTIVE/CANAA_AMBIENTAL/1.0',
     #                 classes={"PERSON": 0})
@@ -197,14 +196,30 @@ if __name__ == '__main__':
     # generate_labels('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/5-BRUISE/TRAIN/ECOTRACE/BARRA_MANSA/BM/9.0',
     #                 classes={"FALHA": 0, "LEVE": 1, "MODERADA": 2, "GRAVE": 3, "GRAVE_ABCESSO": 4, 'GRAVE_ABSCESSO': 4})
 
-
-
-# generate_labels('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/3.0',
-    #                 image_path='IMAGES', classes={"MEAT": 0, "PERSON": 1})
+    generate_labels('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/7.0',
+                    image_path='IMAGES', classes={"MEAT": 0, "PERSON": 1, "SCRAP": 2, "HELMET": 3, "TRASH": 4, "FULL_TRAY": 5, "EMPTY_TRAY": 6})
     #
-    #
-    # generate_labels('/home/diego/2TB/datasets/COGTIVE/MAURICEA/MONITORAMENTO/1.0',
+    # #
+    # generate_labels('/home/diego/2TB/datasets/COGTIVE/MAURICEA_MONITORAMENTO/2.0',
     #                 classes={"FILE_DE_FRANGO": 0,"PERSON": 1,"SASSAMI": 2,"BANDEIJA": 3,"FACA": 4,"RETALHOS_SACO": 5,"SACO_OSSO": 6})
 
+    # generate_labels('/home/diego/2TB/datasets/COGTIVE/MAURICEA_MONITORAMENTO/2.0',
+    #                 classes={"FILE_DE_FRANGO": 0,"PERSON": 1,"SASSAMI": 2,"FACA": 3,"RETALHOS_SACO": 4,"SACO_OSSO": 5})
 
-
+    # generate_labels('/home/diego/2TB/datasets/COGTIVE/Pancristal/1.0',
+    #                 classes={"BAGUETE": 0,
+    #                          "BAGUETE_MAIOR": 0,
+    #                          "BISNAGUINHA": 0,
+    #                          "BISNAGUINHA_MENOR": 0,
+    #                          "PAO_QUADRADO": 0,
+    #                          "PAO_DE_FORMA": 0,
+    #                          "PAO_FRANCES": 0,
+    #                          "PAO_FRANCES_GD": 0,
+    #                          "PAO_FRANCES_PQ": 0,
+    #                          "PAO_GD_ESPECIFIC": 0,
+    #                          "PAO_HOTDOG": 0,
+    #                          "PAO_RETANGULAR": 0,
+    #                          "PAO_RETANGULAR_GD": 0,
+    #                          "PAO_QUADRADO_GD": 0,
+    #                          "PAO_DOCE_450": 0,
+    #                          })
