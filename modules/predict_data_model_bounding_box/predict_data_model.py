@@ -88,9 +88,9 @@ def process_video(video_path, model_path, output_dir):
 
 def main():
     parser = argparse.ArgumentParser(description="Predict OBB model on video and save annotated frames.")
-    parser.add_argument('--video', type=str, required=True, help='Path to input video')
-    parser.add_argument('--model', type=str, required=True, help='Path to OBB Ultralytics model')
-    parser.add_argument('--output', type=str, required=True, help='Directory to save output frames')
+    parser.add_argument('--video', type=str, default='/home/diego/2TB/videos/cogtive/betterbeef/gravacao_2025-06-24_14-21-51.mp4', help='Path to input video')
+    parser.add_argument('--model', type=str, default='/home/diego/2TB/yolo/Trains/runs/cogtive_betterbeef_7.0_person_meat_416_sgd/weights/best.pt', help='Path to OBB Ultralytics model')
+    parser.add_argument('--output', type=str, default='/home/diego/test_meat_person', help='Directory to save output frames')
     args = parser.parse_args()
     process_video(args.video, args.model, args.output)
 

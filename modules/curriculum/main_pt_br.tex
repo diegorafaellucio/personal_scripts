@@ -1,0 +1,354 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+
+\documentclass[12pt,a4paper,sans]{moderncv}
+
+% modern themes
+\moderncvstyle{banking}
+\moderncvcolor{black}
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+% adjust the page margins
+\usepackage[scale=0.75]{geometry}
+
+% personal data
+\name{Diego Rafael}{Lucio}
+\address{Maringá - Paraná - Brasil}{}{}
+\phone[mobile]{+55(44)99950-0352 }
+\email{diegorafaellucio@gmail.com}
+\homepage{www.linkedin.com/in/diegolucio/}
+
+\renewcommand*{\cventry}[7][.25em]{%
+  \cvitem[#1]{}{%
+    {\bfseries#3}\\%
+    \ifthenelse{\equal{#4}{}}{}{{#4}}%
+    \ifthenelse{\equal{#5}{}}{}{, {#5}}\\%
+    \ifthenelse{\equal{#2}{}}{}{{#2}\vspace{2pt}}%
+    \strut%
+    \ifx&#7&%
+    \else{\newline{}\begin{minipage}[t]{\linewidth}\small#7\end{minipage}}\fi\vspace{6pt}}
+    }
+
+\patchcmd{\makeheaddetailssymbol}
+  {\textbullet}{}{}{}
+
+\begin{document}
+
+\makecvtitle
+
+\vspace{12pt}
+\section{RESUMO PROFISSIONAL}
+
+\small{Doutor em Ciência da Computação pela Universidade Federal do Paraná, com mais de 10 anos de experiência combinando desenvolvimento full-stack e pesquisa avançada em Inteligência Artificial. Desenvolvedor full-stack sênior com sólida experiência em tecnologias modernas de backend (Python com Django/FastAPI e Java com Spring Boot) e frontend (React.js e Next.js). Especialista em Machine Learning e Visão Computacional, com histórico comprovado no desenvolvimento de soluções inovadoras em biometria e reconhecimento facial.}
+
+\vspace{12pt}
+\section{Competências}
+
+\begin{itemize}
+\item \textbf{Desenvolvimento Backend:}
+  \begin{itemize}
+    \item \textbf{APIs e Microserviços:} FastAPI, Django REST Framework, Spring Boot, Flask
+    \item \textbf{Bancos de Dados:} MySQL, PostgreSQL, SQLServer, MongoDB, Redis, Neo4j
+    \item \textbf{Cache e Performance:} Redis (cache, gerenciamento de sessão, pub/sub), Memcached
+    \item \textbf{Bancos de Grafos:} Neo4j (modelagem de grafos, consultas Cypher)
+    \item \textbf{Filas de Mensagens:} Apache Kafka, RabbitMQ, Redis Streams
+  \end{itemize}
+\vspace{2pt}
+
+\item \textbf{Python e Ecossistema:}
+  \begin{itemize}
+    \item \textbf{Machine Learning:} PyTorch, TensorFlow, Scikit-learn, Keras, PyCaret
+    \item \textbf{APIs e Web:} FastAPI, Django, Sanic, Flask
+    \item \textbf{Análise de Dados:} Pandas, NumPy, Matplotlib, Seaborn
+    \item \textbf{Processamento de Imagens:} OpenCV, PIL, scikit-image, imutils
+  \end{itemize}
+\vspace{2pt}
+
+\item \textbf{Outras Linguagens:} Java (Spring, JSF, Hibernate), JavaScript/TypeScript, PHP, MATLAB, C++, C
+\vspace{2pt}
+\item \textbf{Desenvolvimento Web:} React, Angular, Spring Boot
+\vspace{2pt}
+\item \textbf{DevOps:} Docker, Kubernetes, Jenkins, CI/CD, AWS, Linux
+\vspace{2pt}
+\item \textbf{Metodologias:} Ágil (Scrum, Kanban, TDD), DevOps, Integração Contínua
+\vspace{2pt}
+\item \textbf{Outras Ferramentas:} Git, Jira, Confluence, Microsoft Azure
+\end{itemize}
+
+\vspace{12pt}
+\section{Experiência Profissional}
+
+\vspace{3pt}
+
+\vspace{24pt}
+\small{\textbf{Tokenology - Miami, EUA}}
+\vspace{3pt}
+
+\textbf{Engenheiro Sênior de Machine Learning / Desenvolvedor Back-End} \hfill \textit{Janeiro 2024 -- Presente}
+\begin{itemize}
+    \item Liderando o desenvolvimento de sistemas avançados de reconhecimento facial e detecção de vivacidade usando arquiteturas de vanguarda como Vision Transformers e modelos de atenção.
+    \item Implementando técnicas inovadoras de detecção de fraudes em detecção de vivacidade, incluindo detecção de deepfake e ataques de apresentação.
+    \item Desenvolvendo pipelines robustos de verificação biométrica facial com alta precisão e baixa latência usando PyTorch e ONNX Runtime.
+    \item Coordenando a integração de sistemas biométricos com microserviços Spring Boot, garantindo escalabilidade e segurança.
+    \item Implantei soluções de cache distribuído e gerenciamento de sessão, reduzindo tempos de resposta da API em 40\% e melhorando a escalabilidade do sistema para usuários concorrentes.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, ONNX, FastAPI), Java (Spring Boot), Docker, AWS, Redis
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Consultor de Machine Learning} \hfill \textit{Janeiro 2023 -- Dezembro 2023}
+\begin{itemize}
+    \item Desenvolvi modelos de reconhecimento facial usando arquiteturas modernas como ArcFace e CosFace, alcançando alta precisão em cenários desafiadores.
+    \item Implementei sistema de detecção de vivacidade usando técnicas avançadas de deep learning para detecção de movimento e expressão facial.
+    \item Criei APIs FastAPI escaláveis para processamento assíncrono de verificação biométrica.
+    \item Otimizei modelos para inferência em tempo real usando ONNX Runtime e TensorRT.
+    \item Implementei sistema de mensageria pub/sub para notificações em tempo real e camada de cache para predições de modelos frequentemente acessadas, melhorando performance do sistema em 35\%.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, TensorRT, FastAPI), Java (Spring Boot), Docker, AWS
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Ecotrace - Vinhedo, Brasil}}
+\vspace{3pt}
+
+\textbf{Consultor Sênior de Inteligência Artificial} \hfill \textit{Janeiro 2024 -- Presente}
+\begin{itemize}
+    \item Liderando projetos de expansão e otimização do sistema de visão computacional para novas unidades industriais.
+    \item Atuando como mentor técnico para a equipe de ML/CV, compartilhando conhecimento e melhores práticas.
+    \item Desenvolvendo novas funcionalidades e otimizações para o sistema de classificação de carcaças.
+    \item Projetei soluções de banco de dados de grafos para modelar relacionamentos complexos entre dados de rastreabilidade de produtos, permitindo análises avançadas e melhorando a transparência da cadeia de suprimentos.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, OpenCV, Django), Docker, Kubernetes, AWS, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Engenheiro Sênior de Inteligência Artificial} \hfill \textit{Novembro 2023 -- Dezembro 2023}
+\begin{itemize}
+    \item Liderei a expansão do sistema de visão computacional para múltiplas unidades industriais.
+    \item Implementei melhorias no pipeline de inferência, reduzindo o tempo de processamento em 35\%.
+    \item Desenvolvi novos módulos para análise de qualidade e rastreabilidade de produtos.
+    \item Coordenei a equipe de ML/CV, estabelecendo processos e metodologias de desenvolvimento.
+    \item Arquitetei soluções híbridas de dados usando cache distribuído para resultados de classificação em tempo real e bancos de dados de grafos para modelagem de relacionamentos complexos de produtos e redes da cadeia de suprimentos, resultando em 50\% de melhoria nas respostas de consultas para relatórios de rastreabilidade.
+    \item Implantei soluções de cache para dados de sessão de estudantes, reduzindo carga do banco de dados e melhorando responsividade do sistema.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, OpenCV, Django), Docker, Kubernetes, AWS, CUDA, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Consultor de Visão Computacional} \hfill \textit{Novembro 2022 -- Outubro 2023}
+\begin{itemize}
+    \item Desenvolvi sistema de visão computacional usando PyTorch e OpenCV para classificação automática de carcaças bovinas, aumentando a eficiência de processamento em 25\%.
+    \item Implementei técnicas avançadas de processamento de imagens com scikit-image e PIL para segmentação e análise de qualidade.
+    \item Desenvolvi API REST com Django para integração do sistema de visão computacional com o sistema ERP existente.
+    \item Otimizei o pipeline de inferência para processamento em tempo real usando CUDA e TensorRT.
+    \item Implantei camada de cache para modelos de classificação e resultados frequentemente acessados, reduzindo carga do banco de dados em 60\% e melhorando tempos de resposta da API para requisitos de processamento em tempo real.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, OpenCV, Django, scikit-image, PIL), Docker, Kubernetes, AWS, CUDA, TensorRT, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Hypeone - Curitiba, Brasil}}
+\vspace{3pt}
+
+\textbf{Consultor de Machine Learning} \hfill \textit{Janeiro 2023 -- Outubro 2023}
+\begin{itemize}
+    \item Atuei como consultor técnico para equipes de ML e desenvolvimento, fornecendo mentoria em projetos complexos.
+    \item Otimizei arquitetura de microserviços com Spring Boot e Spring Cloud, melhorando a escalabilidade do sistema.
+    \item Implementei melhorias nos serviços de processamento de transações financeiras usando Java e Spring Framework.
+    \item Desenvolvi novas funcionalidades para o sistema web usando Angular e TypeScript.
+    \item Projetei soluções backend abrangentes usando cache de alta performance para transações financeiras e bancos de dados de grafos para modelagem de redes complexas de relacionamento com clientes e padrões de detecção de fraudes, resultando em 45\% de melhoria na velocidade de processamento de transações.
+    \item \textbf{Tecnologias principais:} Java (Spring Boot, Spring Cloud), Python (scikit-learn, FastAPI), Angular, Kafka, AWS, Redis, Neo4j
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Engenheiro Sênior de Software} \hfill \textit{Maio 2021 -- Dezembro 2022}
+\begin{itemize}
+    \item Desenvolvi sistema financeiro completo usando Java com Spring Boot, incluindo módulos de processamento de transações e análise de risco.
+    \item Implementei arquitetura escalável de microserviços usando Spring Cloud, Service Discovery e API Gateway.
+    \item Criei modelos de ML usando scikit-learn e PyCaret para automação de processos financeiros.
+    \item Desenvolvi interfaces web modernas e responsivas usando Angular e TypeScript.
+    \item Integrei sistemas usando Apache Kafka para processamento assíncrono e em tempo real.
+    \item Arquitetei soluções de cache distribuído e gerenciamento de sessão, permitindo escalonamento horizontal e reduzindo consultas ao banco de dados em 70\% durante períodos de pico de transações.
+    \item \textbf{Tecnologias principais:} Java (Spring Boot, Spring Cloud), Python (scikit-learn, FastAPI), Angular, Kafka, Docker, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Universidade Federal do Paraná (VRI) - Curitiba, Brasil}}
+\vspace{3pt}
+
+\textbf{Pesquisador de Doutorado} \hfill \textit{Outubro 2016 -- Maio 2022}
+\begin{itemize}
+    \item Desenvolvi modelos de deep learning com PyTorch e TensorFlow para reconhecimento biométrico, focando em reconhecimento periocular.
+    \item Implementei técnicas avançadas de processamento de imagens e visão computacional.
+    \item Publiquei artigos em periódicos e conferências internacionais de alto impacto.
+    \item Colaborei em projetos internacionais de pesquisa biométrica.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, TensorFlow, OpenCV), Docker, CUDA
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Unicesumar - Maringá, Brasil}}
+\vspace{3pt}
+
+\textbf{Engenheiro Sênior de Software} \hfill \textit{Outubro 2016 -- Dezembro 2020}
+\begin{itemize}
+    \item Desenvolvi sistema de reconhecimento facial com PyTorch e OpenCV para monitoramento de exames online, reduzindo significativamente fraudes acadêmicas.
+    \item Implementei modelos preditivos usando scikit-learn e Pandas para identificar estudantes em risco de evasão, reduzindo taxas em 87\%.
+    \item Criei dashboards interativos com Plotly e Streamlit para visualização de métricas acadêmicas.
+    \item Desenvolvi API REST com Django para integração do sistema de reconhecimento facial com o LMS.
+    \item Projetei soluções de banco de dados de grafos para modelar padrões comportamentais complexos de estudantes e relacionamentos acadêmicos, permitindo análises preditivas que melhoraram estratégias de intervenção precoce e contribuíram para a redução de 87\% na evasão.
+    \item Implantei soluções de cache para dados de sessão de estudantes, reduzindo carga do banco de dados e melhorando responsividade do sistema.
+    \item \textbf{Tecnologias principais:} Python (PyTorch, scikit-learn, Django, OpenCV, Pandas, Plotly, Streamlit), Docker, AWS, Redis, Neo4j
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Wasys - Curitiba, Brasil}}
+\vspace{3pt}
+
+\textbf{Cientista de Dados Sênior} \hfill \textit{Outubro 2018 -- Maio 2021}
+\begin{itemize}
+    \item Desenvolvi módulos completos de sistema ERP usando Java com JSF e Spring Boot, incluindo gestão financeira e controle de estoque.
+    \item Implementei arquitetura de microserviços com Spring Boot, garantindo escalabilidade e manutenção eficiente.
+    \item Desenvolvi sistema OCR usando TensorFlow e OpenCV para extração automática de dados de documentos financeiros, melhorando precisão em 18\%.
+    \item Criei interfaces web responsivas e intuitivas usando JSF, PrimeFaces e Bootstrap.
+    \item Implementei integrações com sistemas externos usando APIs REST e mensageria com Apache Kafka.
+    \item Projetei soluções de banco de dados de grafos para modelar relacionamentos comerciais complexos no sistema ERP, permitindo análises avançadas em redes cliente-fornecedor e dependências de estoque, melhorando processos de tomada de decisão em 30\%.
+    \item Implantei soluções de cache distribuído para dados ERP frequentemente acessados e gerenciamento de sessão, reduzindo carga do banco de dados e melhorando responsividade do sistema para usuários concorrentes em 55\%.
+    \item \textbf{Tecnologias principais:} Java (Spring Boot, JSF, Hibernate), Python (TensorFlow, OpenCV), Docker, Kubernetes, Apache Kafka, Neo4j, Redis
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Universidade Estadual de Maringá - Maringá, Brasil}}
+\vspace{3pt}
+
+\textbf{Pesquisador de Mestrado} \hfill \textit{Fevereiro 2014 -- Agosto 2016}
+\begin{itemize}
+    \item Desenvolvi aplicação de visão computacional para classificação automática de espécies de pássaros baseada em suas vocalizações.
+    \item Implementei técnicas de processamento de sinais para conversão de áudio em espectrogramas usando bibliotecas especializadas.
+    \item Apliquei descritores de textura avançados para extração de características de espectrogramas.
+    \item Desenvolvi e otimizei modelos de classificação usando SVM (Support Vector Machines).
+    \item \textbf{Tecnologias principais:} Python, MATLAB, OpenCV, scikit-learn, librosa
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Seebot - Maringá, Paraná, Brasil}}
+\vspace{3pt}
+
+\textbf{Pesquisador Sênior de Biometria/Desenvolvedor Full Stack} \hfill \textit{Janeiro 2014 -- Dezembro 2016}
+\begin{itemize}
+    \item Desenvolvi algoritmos de visão computacional com Python e OpenCV para sistemas biométricos.
+    \item Implementei sistemas embarcados usando Python em Raspberry Pi para captura e processamento de imagens em tempo real.
+    \item Criei interfaces web com PHP e Java para visualização e gerenciamento de dados biométricos.
+    \item Integrei sistemas de hardware (Arduino) com software para automação de captura biométrica.
+    \item \textbf{Tecnologias principais:} Python (OpenCV, scikit-learn), Java, PHP, Arduino, Raspberry Pi
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Elotech Informática e Sistemas Ltda - Maringá, Paraná, Brasil}}
+\vspace{3pt}
+
+\textbf{Desenvolvedor Júnior} \hfill \textit{Agosto 2013 -- Fevereiro 2014}
+\begin{itemize}
+    \item Desenvolvi soluções em Adobe Flex e Java para o portal de transparência.
+    \item Colaborei com membros da equipe para garantir integração perfeita de novas funcionalidades.
+    \item Implementei práticas de codificação eficientes para otimizar performance e experiência do usuário.
+    \item \textbf{Tecnologias principais:} Adobe Flex, Java, JSP, JSF, JSTL, MySQL
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Visãonet Telecom - Goioerê, Paraná, Brasil}}
+\vspace{3pt}
+
+\textbf{Desenvolvedor Júnior} \hfill \textit{Março 2012 -- Dezembro 2013}
+\begin{itemize}
+    \item Desenvolvi novas funcionalidades para sistemas web internos em JAVA e PHP.
+    \item Mantive sites de e-commerce no framework MAGENTO.
+    \item Colaborei com a equipe para garantir operações e atualizações suaves.
+    \item Contribuí para o sucesso geral dos projetos de desenvolvimento web.
+    \item \textbf{Tecnologias principais:} Java, PHP, MAGENTO, MySQL
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Analista de Suporte de Sistemas} \hfill \textit{Abril 2011 -- Março 2012}
+\begin{itemize}
+    \item Liderei a implementação de sistemas de automação comercial, otimizando operações e aumentando produtividade.
+    \item Desenvolvi novas funcionalidades de software em resposta a solicitações de clientes.
+    \item Colaborei com equipes para garantir integração perfeita de novas funcionalidades.
+    \item Contribuí para a eficiência geral e funcionalidade do software.
+    \item \textbf{Tecnologias principais:} Delphi, Firebird, Java, PHP, MySQL
+\end{itemize}
+
+\vspace{12pt}
+\textbf{Operador de Call Center} \hfill \textit{Julho 2008 -- Abril 2010}
+\begin{itemize}
+    \item Forneci suporte ao cliente via telefone para resolver problemas de acesso à internet.
+    \item Desenvolvi novas tecnologias e corrigi bugs em produtos da empresa para melhorar a experiência do cliente.
+    \item Colaborei com membros da equipe para melhorar processos de atendimento ao cliente e eficiência.
+    \item Implementei soluções inovadoras para otimizar operações de suporte ao cliente.
+    \item \textbf{Tecnologias principais:} PHP, MySQL, Elastix
+\end{itemize}
+
+\vspace{24pt}
+\small{\textbf{Papelaria Famsit - Goioerê, Paraná, Brasil}}
+\vspace{3pt}
+
+\textbf{Auxiliar Geral} \hfill \textit{Janeiro 2006 -- Junho 2008}
+\begin{itemize}
+    \item Gerenciei tarefas de limpeza, fotocópia e atendimento ao cliente.
+    \item Garantei ambiente de trabalho limpo e organizado e forneci serviços eficientes.
+    \item Implementei novos protocolos para melhorar eficiência e satisfação do cliente.
+    \item Desenvolvi fortes habilidades multitarefas e atendimento ao cliente em ambiente de ritmo acelerado.
+\end{itemize}
+
+\vspace{12pt}
+\section{Educação}
+
+\cventry{2016--2022}{Doutorado em Ciência da Computação}{Universidade Federal do Paraná}{Curitiba, Paraná, Brasil}{}{}
+
+\cventry{2014--2016}{Mestrado em Ciência da Computação}{Universidade Estadual de Maringá}{Maringá, Paraná, Brasil}{}{}
+
+\cventry{2008--2011}{Tecnólogo em Sistemas para Internet}{Universidade Tecnológica Federal do Paraná}{Campo Mourão, Paraná, Brasil}{}{}
+
+\vspace{12pt}
+\section{Prêmios e Reconhecimentos}
+
+\begin{itemize}
+
+\item{\cventry{}{Primeiro lugar na Competição de Biometria (Região Periocular)}{IEEE WORLD CONGRESS ON COMPUTATIONAL INTELLIGENCE}{Glasgow, Reino Unido, 2020}{}{}}
+
+\item{\cventry{}{Segundo lugar na Competição de Segmentação de Esclera}{IEEE INTERNATIONAL JOINT CONFERENCE ON BIOMETRICS}{Houston, EUA, 2020}{}{}}
+
+\end{itemize}
+
+\vspace{12pt}
+\section{Publicações Selecionadas}
+
+\begin{itemize}
+
+\item Pati, S.; Baid, U.; Edwards, B. et al.(2022). Federated learning enables big data for rare cancer boundary detection. Nature communications, 13(1), 7346. \textbf{[305 citações]}
+
+\item LUCIO, D. R. et al. (2020). COVID-19 detection in CT images with deep learning: A voting-based scheme and cross-datasets analysis. Informatics in Medicine Unlocked, 20, 100427. \textbf{[260 citações]}
+
+\item LUCIO, D. R.; COSTA, Y. M. G. (2016). Combining visual and acoustic features for audio classification tasks. Pattern Recognition Letters, 88, 49-56. \textbf{[99 citações]}
+
+\item ZANLORENSI, L. A.; LAROCA, R.; LUCIO, D. R.; SANTOS, L. R., BRITTO JR; A. S.; MENOTTI, D. (2022). A new periocular dataset collected by mobile devices in unconstrained scenarios. Scientific Reports, 12(1), 17989. \textbf{[26 citações]}
+
+\item VITEK, MATEJ; DAS, ABHIJIT; LUCIO, DIEGO RAFAEL et al. (2022). Exploring Bias in Sclera Segmentation Models: A Group Evaluation Approach. IEEE Transactions on Information Forensics and Security, 18, 190-205. \textbf{[19 citações]}
+
+\end{itemize}
+
+\vspace{8pt}
+Lista completa disponível no \href{https://scholar.google.com.br/citations?user=FS_momQAAAAJ&hl=en}{Google Scholar} .
+
+\vspace{12pt}
+\section{Apresentações de Trabalhos}
+
+\begin{enumerate}
+    \item LUCIO D. R. ; ZANLORENSI L.; BESSON V., COSTA Y. M. G., MENOTTI D. . Pupil Constrictions and Dilations Effects as Data Augmentation on an Iris Recognition CNN Approach. In: 23rd International Conference on Artificial Intelligence and Soft Computing, 2024.
+
+    \item KIMURA G.Y. ; LUCIO D. R. ; BRITO A. S. ; MENOTTI D. . Simultaneous Iris and Periocular Region Detection Using Coarse Annotations. In: International Joint Conference on Computer Vision, Imaging and Computer Graphics Theory and Applications, 2020.
+
+    \item LUCIO, D. R. ; LAROCA, R. ; SEVERO, E. ; BRITTO JR., A. S. ; MENOTTI, D. . Fully Convolutional Networks and Generative Adversarial Networks Applied to Sclera Segmentation. 2018.
+
+\end{enumerate}
+
+\end{document}
+
+%% end of file `template.tex'.

@@ -1,0 +1,311 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfgantt}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\geometry{margin=1in}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{OCR API \& Worker Migration Schedule}
+\fancyhead[R]{\today}
+\fancyfoot[C]{\thepage}
+
+\definecolor{phase1}{RGB}{52, 152, 219}    % Blue
+\definecolor{phase2}{RGB}{46, 204, 113}    % Green
+\definecolor{phase3}{RGB}{241, 196, 15}    % Yellow
+\definecolor{phase4}{RGB}{231, 76, 60}     % Red
+
+\title{\textbf{OCR API \& Worker Migration Project Schedule}}
+\author{Diego Rafael Lucio}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Project Overview}
+
+This document outlines the 12-week migration schedule for refactoring the OCR processing system from \texttt{ocr-worker} to \texttt{ocr-api} following SOLID principles and Clean Architecture patterns.
+
+\subsection{Objectives}
+\begin{itemize}
+    \item Centralize all OCR processing functions in the \texttt{ocr-api}
+    \item Refactor \texttt{ocr-worker} to consume RabbitMQ and call OCR API endpoints
+    \item Implement Clean Architecture with proper separation of concerns
+    \item Maintain backward compatibility and ensure zero-downtime migration
+\end{itemize}
+
+\section{Project Timeline}
+
+\begin{ganttchart}[
+    hgrid,
+    vgrid,
+    x unit=0.8cm,
+    y unit title=0.6cm,
+    y unit chart=0.5cm,
+    title height=1,
+    bar height=0.8,
+    group height=0.8,
+    milestone height=0.8
+]{1}{12}
+
+\gantttitle{OCR Migration Project - 12 Week Schedule}{12} \\
+\gantttitlelist{1,...,12}{1} \\
+
+\ganttgroup[group/.append style={fill=phase1}]{Phase 1: Analysis \& Architecture}{1}{2} \\
+\ganttbar[bar/.append style={fill=phase1!70}]{Analysis \& Documentation}{1}{1} \\
+\ganttbar[bar/.append style={fill=phase1!70}]{Architecture Design}{2}{2} \\
+
+\ganttgroup[group/.append style={fill=phase2}]{Phase 2: Core Development}{3}{6} \\
+\ganttbar[bar/.append style={fill=phase2!70}]{OCR-API Base Setup}{3}{4} \\
+\ganttbar[bar/.append style={fill=phase2!70}]{OCR Core Migration}{5}{6} \\
+
+\ganttgroup[group/.append style={fill=phase3}]{Phase 3: Integration \& Testing}{7}{9} \\
+\ganttbar[bar/.append style={fill=phase3!70}]{Observability \& Performance}{7}{7} \\
+\ganttbar[bar/.append style={fill=phase3!70}]{Worker Refactor}{8}{8} \\
+\ganttbar[bar/.append style={fill=phase3!70}]{E2E Integration}{9}{9} \\
+
+\ganttgroup[group/.append style={fill=phase4}]{Phase 4: Deployment}{10}{12} \\
+\ganttbar[bar/.append style={fill=phase4!70}]{Security \& Hardening}{10}{10} \\
+\ganttbar[bar/.append style={fill=phase4!70}]{CI/CD Integration}{11}{11} \\
+\ganttbar[bar/.append style={fill=phase4!70}]{Rollout \& Documentation}{12}{12} \\
+
+\ganttmilestone{Architecture Review}{2} \\
+\ganttmilestone{Core Migration Complete}{6} \\
+\ganttmilestone{Integration Testing}{9} \\
+\ganttmilestone{Production Deployment}{12}
+
+\end{ganttchart}
+
+\section{Detailed Weekly Schedule}
+
+\subsection{Phase 1: Analysis \& Architecture (Weeks 1-2)}
+
+\begin{longtable}{|p{2cm}|p{12cm}|}
+\hline
+\rowcolor{phase1!30}
+\textbf{Week} & \textbf{Tasks \& Deliverables} \\
+\hline
+\endhead
+
+\textbf{Week 1} & 
+\textbf{Analysis \& Documentation} \\
+& • Document all 15+ insurance providers (Medicare, Anthem, Aetna, etc.) \\
+& • Map JSON templates by state/provider (FL, CA, PA, etc.) \\
+& • Inventory dependencies: Azure credentials, PostgreSQL schemas, environment variables \\
+& • Analyze RabbitMQ contracts (queues, message format, correlation\_id) \\
+& • Document current OCR functionalities and workflows \\
+\hline
+
+\textbf{Week 2} & 
+\textbf{Architecture Design} \\
+& • Design Clean Architecture: Domain, Application, Infrastructure layers \\
+& • Define new API contracts: \texttt{/v1/ocr/insurance}, \texttt{/v1/ocr/drivelicense}, \texttt{/v1/ocr/jobs/\{id\}} \\
+& • Specify DTOs and standardized error handling \\
+& • Plan strategy pattern for multiple OCR engines (Azure, Tesseract, CRAFT) \\
+& • Create Architecture Decision Records (ADRs) \\
+\hline
+\end{longtable}
+
+\subsection{Phase 2: Core Development (Weeks 3-6)}
+
+\begin{longtable}{|p{2cm}|p{12cm}|}
+\hline
+\rowcolor{phase2!30}
+\textbf{Week} & \textbf{Tasks \& Deliverables} \\
+\hline
+\endhead
+
+\textbf{Week 3} & 
+\textbf{OCR-API Base Setup} \\
+& • Create Clean Architecture skeleton in ocr-api \\
+& • Implement Domain entities: \texttt{InsuranceCard}, \texttt{DriverLicense}, \texttt{OcrResult} \\
+& • Create interfaces (ports): \texttt{IOcrEngine}, \texttt{ITemplateRepository}, \texttt{IImageProcessor} \\
+& • Setup dependency injection container and configuration \\
+\hline
+
+\textbf{Week 4} & 
+\textbf{Use Cases \& Controllers} \\
+& • Implement Use Cases: \texttt{ProcessInsuranceCardUseCase}, \texttt{ProcessDriverLicenseUseCase} \\
+& • Create HTTP controllers with Pydantic validation \\
+& • Implement health checks and basic metrics \\
+& • Unit tests for Use Cases \\
+\hline
+
+\textbf{Week 5} & 
+\textbf{OCR Core Migration - Part 1} \\
+& • Port \texttt{AzureUtils.map\_azure()} to \texttt{AzureOcrEngine} (Infrastructure) \\
+& • Migrate \texttt{ocr\_process.py} and \texttt{ocr\_insurance\_process.py} to Domain Services \\
+& • Implement \texttt{TemplateRepository} with caching for JSON templates \\
+& • Port \texttt{ImageUtils} to \texttt{ImageProcessor} service \\
+\hline
+
+\textbf{Week 6} & 
+\textbf{OCR Core Migration - Part 2} \\
+& • Migrate barcode processing (zxing + AAMVA) to \texttt{BarcodeOcrEngine} \\
+& • Implement strategy pattern for engine selection (barcode → Azure fallback) \\
+& • Port string utilities and validations to Value Objects \\
+& • Integration tests with real datasets \\
+\hline
+\end{longtable}
+
+\subsection{Phase 3: Integration \& Testing (Weeks 7-9)}
+
+\begin{longtable}{|p{2cm}|p{12cm}|}
+\hline
+\rowcolor{phase3!30}
+\textbf{Week} & \textbf{Tasks \& Deliverables} \\
+\hline
+\endhead
+
+\textbf{Week 7} & 
+\textbf{Observability \& Performance} \\
+& • Implement structured logging with correlation\_id \\
+& • Metrics: latency p95/p99, throughput, error rate by provider \\
+& • Distributed tracing (OpenTelemetry) for request tracking \\
+& • Profiling and optimizations: Azure model caching, connection pooling \\
+& • Load testing with realistic scenarios \\
+\hline
+
+\textbf{Week 8} & 
+\textbf{Worker Refactor} \\
+& • Refactor \texttt{consumer.py} to be HTTP client only \\
+& • Implement circuit breaker and exponential retry \\
+& • Maintain status tracking and database operations logic \\
+& • Configure end-to-end correlation\_id \\
+& • Resilience testing (timeouts, network failures) \\
+\hline
+
+\textbf{Week 9} & 
+\textbf{E2E Integration} \\
+& • Setup test environment with RabbitMQ + PostgreSQL + OCR-API \\
+& • Implement golden tests for result parity \\
+& • Feature flag to switch between old/new worker \\
+& • Compatibility testing with existing contracts \\
+& • Performance validation (latency, throughput) \\
+\hline
+\end{longtable}
+
+\subsection{Phase 4: Deployment (Weeks 10-12)}
+
+\begin{longtable}{|p{2cm}|p{12cm}|}
+\hline
+\rowcolor{phase4!30}
+\textbf{Week} & \textbf{Tasks \& Deliverables} \\
+\hline
+\endhead
+
+\textbf{Week 10} & 
+\textbf{Security \& Hardening} \\
+& • Implement mTLS authentication between worker and API \\
+& • Rate limiting and rigorous payload validation \\
+& • Secret management (Azure keys, DB credentials) \\
+& • Security scanning and vulnerability assessment \\
+& • Implement audit logging \\
+\hline
+
+\textbf{Week 11} & 
+\textbf{CI/CD Integration} \\
+& • Add build/test jobs for ocr-api to existing pipeline \\
+& • Configure automated deployment with health checks \\
+& • Setup monitoring and alerting \\
+& • Document runbooks and procedures \\
+& • Automated smoke tests post-deployment \\
+\hline
+
+\textbf{Week 12} & 
+\textbf{Rollout \& Documentation} \\
+& • Canary deployment with 10\% → 50\% → 100\% traffic \\
+& • Monitor SLIs/SLOs during rollout \\
+& • Complete documentation: OpenAPI, architecture, troubleshooting \\
+& • Team handover and training \\
+& • Post-mortem and lessons learned \\
+\hline
+\end{longtable}
+
+\section{Key Deliverables}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|l|l|}
+\hline
+\rowcolor{gray!30}
+\textbf{Phase} & \textbf{Week} & \textbf{Key Deliverable} \\
+\hline
+Phase 1 & Week 2 & Architecture Design Document \& ADRs \\
+\hline
+Phase 2 & Week 4 & OCR-API Base with Use Cases \\
+\hline
+Phase 2 & Week 6 & Complete OCR Core Migration \\
+\hline
+Phase 3 & Week 9 & E2E Integration \& Golden Tests \\
+\hline
+Phase 4 & Week 12 & Production Deployment \& Documentation \\
+\hline
+\end{tabular}
+\caption{Major Project Milestones}
+\end{table}
+
+\section{Risk Management}
+
+\subsection{High Risk Items}
+\begin{itemize}
+    \item \textbf{OCR Result Divergence:} Mitigated by golden tests and shadow traffic
+    \item \textbf{Performance Degradation:} Addressed through profiling, load testing, and caching
+    \item \textbf{Migration Downtime:} Prevented with feature flags and rollback procedures
+\end{itemize}
+
+\subsection{Medium Risk Items}
+\begin{itemize}
+    \item \textbf{Template Complexity:} Managed through incremental refactoring and comprehensive testing
+    \item \textbf{Azure Integration Issues:} Handled with robust error handling and credential management
+    \item \textbf{Database Schema Changes:} Addressed with migrations and backward compatibility
+\end{itemize}
+
+\section{Success Criteria}
+
+\begin{enumerate}
+    \item Zero-downtime migration with no service interruption
+    \item Maintain or improve OCR accuracy (baseline: current accuracy rates)
+    \item Performance targets: p95 latency < 2s, throughput $\geq$ current levels
+    \item 100\% test coverage for critical OCR processing functions
+    \item Complete documentation and team knowledge transfer
+\end{enumerate}
+
+\section{Team Responsibilities}
+
+\begin{table}[h!]
+\centering
+\begin{tabular}{|l|p{8cm}|}
+\hline
+\rowcolor{gray!30}
+\textbf{Role} & \textbf{Responsibilities} \\
+\hline
+Tech Lead & Architecture design, code reviews, risk management \\
+\hline
+Backend Developer & OCR core migration, API implementation \\
+\hline
+DevOps Engineer & CI/CD integration, deployment automation \\
+\hline
+QA Engineer & Test strategy, golden tests, performance validation \\
+\hline
+Product Owner & Requirements validation, acceptance criteria \\
+\hline
+\end{tabular}
+\caption{Team Roles and Responsibilities}
+\end{table}
+
+\end{document}

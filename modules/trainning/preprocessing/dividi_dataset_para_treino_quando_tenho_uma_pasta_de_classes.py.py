@@ -168,5 +168,6 @@ def generateDatabaseFromMultiplePaths(dataset_paths, data_output_path):
 # generateDatabase('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/4.0', "/home/diego/2TB/TREINOS/BETTER_BEEF_4.0")
 
 # generateDatabase('/home/diego/2TB/datasets/COGTIVE/Pancristal/1.0', "/home/diego/2TB/datasets/COGTIVE/Pancristal/1.0/DATA")
-generateDatabase('/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/7.0', "/home/diego/2TB/datasets/COGTIVE/BETTER_BEEF/7.0/DATA")
+# generateDatabase('/home/diego/2TB/datasets/COGTIVE/KOVI/PLATE_DETECTION/1.0', "/home/diego/2TB/datasets/COGTIVE/KOVI/PLATE_DETECTION/1.0/DATA")
+generateDatabase('/home/diego/2TB/datasets/COGTIVE/BIG_CHARQUE/2.0', "/home/diego/2TB/datasets/COGTIVE/BIG_CHARQUE/2.0/DATA")
 

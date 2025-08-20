@@ -7,17 +7,24 @@ import tqdm
 import concurrent.futures
 from concurrent.futures import ThreadPoolExecutor
 
-from base.src.ultralytics_classifier.classifier import Classifier
-from base.src.utils.utils import get_intersection_score, generate_json
+from base.src.ml.classifier.ultralytics_classifier.classifier import Classifier
+from base.src.utils.utils import generate_json
 import json
 device = 'cuda:0'
 
 padding = 550
 
-classifier = Classifier('/home/diego/2TB/projects/ECO/ecoia-classifier/data/models/skeleton/weight.pt')
+classifier = Classifier('/home/diego/Projects/ECO/ecoia-classifier/data/models/skeleton/weight.pt')
 print()
 # side_classifier = Classifier('/home/diego/1TB/ecotrace/frameworks/yolov5/runs/train/exp4/weights/last.pt', device=device, max_det=10)
 
+
+def process_dataset(dataset_path):
+    subsets = os.listdir(dataset_path)
+
+    for subset in tqdm.tqdm(subsets):
+        subset_path = os.path.join(dataset_path, subset)
+        generate_jsons(subset_path, subset.upper())
 
 def generate_jsons(dataset_path, label):
     executor = ThreadPoolExecutor(max_workers=50)
@@ -85,38 +92,20 @@ def generate_jsons(dataset_path, label):
 
 
 if __name__ == '__main__':
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_MEDIANA/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_MEDIANA/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_MEDIANA/UNIFORME')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/RIO_MARIA_MEDIANA/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/RIO_MARIA_MEDIANA/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/RIO_MARIA_MEDIANA/UNIFORME')
 
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_MEDIANA/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_MEDIANA/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_UNIFORME_COMPARTILHAMENTO/EXCESSIVA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_UNIFORME_COMPARTILHAMENTO/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/3-MEAT/ECOTRACE/SUL_BEEF_UNIFORME_COMPARTILHAMENTO/UNIFORME')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/AUDITORIA/MINERVA/NOVA_AUDITORIA_MSO/AUSENTE')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/AUDITORIA/MINERVA/NOVA_AUDITORIA_MSO/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/AUDITORIA/MINERVA/NOVA_AUDITORIA_MSO/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/AUDITORIA/MINERVA/NOVA_AUDITORIA_MSO/UNIFORME')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/AUDITORIA/MINERVA/NOVA_AUDITORIA_MSO/EXCESSIVA')
+    process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/BTS/5.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/MSO/7.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/PRN/4.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/SUL_BEEF/SB/6.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/RLM/7.0')
 
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/SUL_BEEF/1.0/AUSENTE')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/SUL_BEEF/1.0/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/SUL_BEEF/1.0/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/SUL_BEEF/1.0/UNIFORME')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/SUL_BEEF/1.0/EXCESSIVA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/RIO_MARIA/1.0/AUSENTE')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/RIO_MARIA/1.0/ESCASSA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/RIO_MARIA/1.0/MEDIANA')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/RIO_MARIA/1.0/UNIFORME')
-    # generate_jsons('/home/diego/2TB/datasets/eco/BOVINOS/DATASETS/NOVOS/3-MEAT/ECOTRACE/RIO_MARIA/1.0/EXCESSIVA')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/BLN/3.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/BARRA_MANSA/BM/4.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/JBO/1.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/JNB/1.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/FRIGOL/LP/1.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/MINERVA/PGO/3.0')
+    # process_dataset('/home/diego/2TB/datasets/ECOTRACE/GCP/eco/bovinos/3-MEAT/TRAIN/ECOTRACE/RIO_MARIA/RM/1.0')
 
-    generate_jsons('/home/diego/Downloads/Acabamento_novo_BM_3/AUSENTE', "AUSENTE")
-    generate_jsons('/home/diego/Downloads/Acabamento_novo_BM_3/ESCASSA', "ESCASSA")
-    generate_jsons('/home/diego/Downloads/Acabamento_novo_BM_3/MEDIANA', "MEDIANA")
-    generate_jsons('/home/diego/Downloads/Acabamento_novo_BM_3/UNIFORME', "UNIFORME")
-    # generate_jsons('/home/diego/Downloads/Acabamento_novo_BM_3/EXCESSIVA', "EXCESSIVA")
+
 
